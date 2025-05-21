@@ -1,5 +1,5 @@
-export async function getWeather() {
-  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/London,UK?key=65SXAJHLF8RPX8AYSA438AZG7`;
+export async function getWeather(location) {
+  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=65SXAJHLF8RPX8AYSA438AZG7`;
   try {
     const response = await fetch(url, { mode: "cors" });
     const data = await response.json();
