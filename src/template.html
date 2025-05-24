@@ -3,7 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Weather</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <div class="locationcard">
+        <form class="form-inline">
+          <label for="cityinput">Enter a city:</label>
+          <input type="text" id="cityinput" name="cityinput" />
+          <button type="submit" id="submitButton">Submit</button>
+          <div></div>
+          <span id="errortext">Error.</span>
+        </form>
+      </div>
+      <div class="maincard">
+        <div id="city">London, UK</div>
+        <div id="icon"><img src="./icons/wi-rain.svg" /></div>
+        <div id="temp">24 &deg; C</div>
+        <div id="condition">Cloudy with a chance of meatballs</div>
+        <div id="humidity">35% Relative Humidity</div>
+      </div>
+      <div class="footer">
+        Weather data by
+        <a href="https://www.visualcrossing.com">Visual Crossing</a>, Icons by
+        <a href="https://erikflowers.github.io/weather-icons/">Weather Icons</a>
+      </div>
+    </div>
+  </body>
 </html>

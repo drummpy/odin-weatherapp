@@ -1,0 +1,133 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: var(--bg-color);
+}
+
+:root {
+  --bg-color: #f5f9fc;
+  --primary: #2a9df4;
+  --text-dark: #1c3d5a;
+  --text-body: #4a4a4a;
+  --card-bg: #ffffff;
+  --border: #e0e6ed;
+  --error: #e63946;
+  --success: #4caf50;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(100vw, 1400px);
+  height: 80vh;
+  margin: 0 auto;
+  padding-top: 2rem;
+  gap: 0.5rem;
+}
+
+.locationcard,
+.maincard {
+  width: clamp(320px, 100%, 428px);
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+input,
+button {
+  padding: 8px;
+  border-radius: 15px;
+  font: inherit;
+  border: 0px;
+}
+
+input {
+  background-color: #e0e6ed;
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #6ab6f0;
+}
+
+#errortext {
+  font-size: 0.8rem;
+  color: var(--error);
+  height: 1em; /* Reserve space */
+  visibility: visible; /* Hide but preserve space */
+  margin-top: 5px;
+}
+
+#errortext.show {
+  visibility: visible;
+}
+
+.form-inline {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0fr 0fr;
+  column-gap: 0.5em;
+  margin-top: 0.8em;
+}
+
+label {
+  justify-self: center;
+  align-self: center;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+
+.maincard {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  text-align: center;
+}
+
+#city {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+#temp {
+  font-size: 2rem;
+}
+
+#condition {
+  font-size: 1.5rem;
+  font-weight: lighter;
+  padding: 0.5rem;
+}
+
+#humidity {
+  padding: 0.5rem;
+}
+
+.footer {
+  font-size: 0.7rem;
+  color: #9c9c9c;
+}
+
+a {
+  color: #9c9c9c;
+}
