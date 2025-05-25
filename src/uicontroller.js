@@ -6,12 +6,12 @@ export function UIController() {
   const errorDisplay = document.getElementById("errortext");
   const submitButton = document.getElementById("submitbutton");
   const cityName = document.getElementById("city");
-  //const icon = document.getElementById("icon");
+  const icon = document.getElementById("icon");
   const temperature = document.getElementById("temp");
   const currentConditon = document.getElementById("condition");
   const humidity = document.getElementById("humidity");
 
-  submitButton.addEventListener("click", (event) => {
+  submitButton.addEventListener("click", async (event) => {
     event.preventDefault();
 
     const city = cityInput.value;
@@ -24,7 +24,7 @@ export function UIController() {
     }
 
     submitButton.disabled = true;
-    displayWeather(city);
+    await displayWeather(city);
     submitButton.disabled = false;
   });
 
@@ -35,11 +35,25 @@ export function UIController() {
       showError("Unable to find city.");
       return;
     }
+    const iconName = data.currentConditions.icon;
+    console.log(iconName);
+    loadWeatherIcon(iconName);
 
     cityName.textContent = data.resolvedAddress;
     temperature.textContent = `${data.currentConditions.temp} °C`;
     currentConditon.textContent = data.currentConditions.conditions;
     humidity.textContent = `${data.currentConditions.humidity}% Relative Humidity`;
+  };
+
+  const loadWeatherIcon = async (iconSVG) => {
+    try {
+      const module = await import(`./icons/${iconSVG}.svg`);
+      icon.src = module.default;
+    } catch (error) {
+      const fallBackModule = await import(`./icons/na.svg`);
+      icon.src = fallBackModule.default;
+      console.log(error);
+    }
   };
 
   const showError = (err) => {
