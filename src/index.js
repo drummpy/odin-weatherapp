@@ -1,4 +1,5 @@
 import "./styles.css";
-import { getWeather } from "./weatherapi";
+import { UIController } from "./uicontroller";
 
-getWeather("London");
+const ui = UIController();
+ui.initialize();

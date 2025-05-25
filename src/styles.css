@@ -71,10 +71,10 @@ button:hover {
 }
 
 #errortext {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: var(--error);
   height: 1em; /* Reserve space */
-  visibility: visible; /* Hide but preserve space */
+  visibility: hidden; /* Hide but preserve space */
   margin-top: 5px;
 }
 

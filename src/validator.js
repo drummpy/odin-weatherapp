@@ -6,7 +6,7 @@ export function validateCity(input) {
   if (input.trim().length < 3) {
     return {
       valid: false,
-      message: "City name must be at least 3 characters long.",
+      message: "City name too short.",
     };
   }
 
@@ -14,7 +14,7 @@ export function validateCity(input) {
   if (!regex.test(input.trim())) {
     return {
       valid: false,
-      message: "City name cannot contain special characters.",
+      message: "Cannot contain special characters.",
     };
   }
 
