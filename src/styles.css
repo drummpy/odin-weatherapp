@@ -102,6 +102,7 @@ label {
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   text-align: center;
+  color: var(--text-body);
 }
 
 #city {

@@ -36,7 +36,6 @@ export function UIController() {
       return;
     }
     const iconName = data.currentConditions.icon;
-    console.log(iconName);
     loadWeatherIcon(iconName);
 
     cityName.textContent = data.resolvedAddress;
@@ -69,7 +68,7 @@ export function UIController() {
   const initialize = () => {
     console.log("UI Initialized");
     clearError();
-    displayWeather("london");
+    displayWeather("greenwhich uk");
   };
 
   return { initialize };
